@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Assassin's Maze</title>
+    <link rel="stylesheet" href="stylesheets/maze.css">
+  </head>
+  <body>
+    <div id="canvas_container">
+    </div>
+    <div class="instructions">
+      <h1>Instructions
+      </h1><img src="images/maze/close-button.png" width="20" height="20" class="close"/>
+      <ul>
+        <li class="arrow"><span class="title">use the arrow keys</span><img src="images/maze/arrow_keys.png" width="110" height="75"/>
+        </li>
+        <li class="target"><span class="title">target</span><img src="images/maze/target.png" width="75" height="75"/><span class="info">RUN!</span>
+        </li>
+        <li class="assassin"><span class="title">assassin</span><img src="images/maze/assassin.png" width="75" height="75"/><span class="info">KILL!</span>
+        </li>
+        <li class="killing"><span class="title">killing</span><img src="images/maze/killing.png" width="100" height="75"/><span class="info">assassin kills by contact</span>
+        </li>
+      </ul>
+    </div>
+    <script src="javascripts/maze/socket.io.js"></script>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/maze/raphael-min.js"></script>
+    <script src="javascripts/maze/scale.raphael.js"></script>
+    <script src="javascripts/maze/maze.js"></script>
+    <script src="javascripts/maze/circle.js"></script>
+    <script src="javascripts/maze/blood.js"></script>
+    <script src="javascripts/maze/application.js"></script>
+  </body>
+</html>

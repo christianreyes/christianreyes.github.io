@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: black;
+}
+
+#canvas_container {
+  display: none;
+  z-index: -1;
+}
+
+.instructions {
+  display: none;
+  z-index: 1;
+  color: white;
+  margin: 150px auto;
+  text-align: center;
+  width: 700px;
+  height: 300px;
+  background-color: rgba(17,17,17,0.7);
+  border: 10px solid #222;
+  border-radius: 10px;
+  position: relative;
+  opacity: .95;
+}
+
+img.close {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.instructions ul {
+  padding-left: 0;
+  margin: 30px auto;
+  list-style: none;
+  text-align: center;
+  width: 665px;
+  height: 200px;
+  font-weight: bolder;
+}
+
+.instructions li{
+  padding-top: 15px;
+  float: left;
+  width: 165px;
+  height: 150px;
+}
+
+.instructions li span.title{
+  display: block;
+  margin-bottom: 25px;
+}
+
+.instructions li span.info{
+  display: block;
+  margin-top: 25px;
+}
+
+.instructions li:nth-child(n+2){
+  border-left: 1px dashed #333;
+}
