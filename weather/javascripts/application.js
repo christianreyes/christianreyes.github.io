@@ -7,7 +7,8 @@ $(function(){
     $('#latitude').text(latitude);
     $('#longitude').text(longitude);
     
-    var uri = "http://forecast.weather.gov/MapClick.php?lat=" + latitude + "&lon=" + longitude + "&FcstType=dwml";
+    var uri = "http://www.myweather2.com/developer/forecast.ashx?uac=kmzcojEzpn&output=json&query=" + latitude + "," + longitude;
+
     jQuery.get(uri, function(res){
       $('#weather').text(res.responseText);
     });
