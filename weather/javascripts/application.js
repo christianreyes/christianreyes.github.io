@@ -8,5 +8,8 @@ $(function(){
     $('#longitude').text(longitude);
     
     //$('#weather').load("http://forecast.weather.gov/MapClick.php?lat=" + latitude + "&lon=" + longitude + "&FcstType=dwml")
+    jQuery.get('http://google.com', function(res){
+      $('#weather').text(res.responseText);
+    });
   });
 });
