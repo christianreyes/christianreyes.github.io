@@ -7,6 +7,6 @@ $(function(){
     $('#latitude').text(latitude);
     $('#longitude').text(longitude);
     
-    $('#weather').load("http://forecast.weather.gov/MapClick.php?lat=" + latitude + "&lon=" + longitude + "&FcstType=dwml")
+    //$('#weather').load("http://forecast.weather.gov/MapClick.php?lat=" + latitude + "&lon=" + longitude + "&FcstType=dwml")
   });
 });
