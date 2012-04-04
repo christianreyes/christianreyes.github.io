@@ -7,10 +7,11 @@ $(function(){
     $('#latitude').text(latitude);
     $('#longitude').text(longitude);
     
-    var uri = "http://www.myweather2.com/developer/forecast.ashx?uac=kmzcojEzpn&output=json&query=" + latitude + "," + longitude;
+    var uri = "http://ws.geonames.org/findNearByWeatherJSON?lat=" + latitude + "&lng=" + longitude
 
-    jQuery.get(uri, function(res){
-      $('#weather').text(res.responseText);
+    $.getJSON(uri, function(data){
+      console.log("SUCCESS");
+      console.log(data)
     });
   });
 });
