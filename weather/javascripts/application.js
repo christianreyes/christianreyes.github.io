@@ -11,7 +11,9 @@ $(function(){
 
     $.getJSON(uri, function(data){
       console.log("SUCCESS");
-      console.log(data)
+      console.log(data);
+      $('#temperature').text(data.weatherObservation.temperature * 1.8 + 32 + "F");
+      $('#clouds').text(data.weatherObservation.clouds);
     });
   });
 });
