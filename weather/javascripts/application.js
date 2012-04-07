@@ -14,6 +14,7 @@ $(function(){
       console.log(data);
       $('#temperature').text(data.weatherObservation.temperature * 1.8 + 32 + " F");
       $('#clouds').text(data.weatherObservation.clouds);
+      $('#condition').text(data.weatherObservation.weatherCondition);
     });
   });
 });
