@@ -10,11 +10,9 @@ $(function(){
     var uri = "http://ws.geonames.org/findNearByWeatherJSON?lat=" + latitude + "&lng=" + longitude
 
     $.getJSON(uri, function(data){
-      console.log("SUCCESS");
-      console.log(data);
-      $('#temperature').text(data.weatherObservation.temperature * 1.8 + 32 + " F");
-      $('#clouds').text(data.weatherObservation.clouds);
+      $('#temp').text(data.weatherObservation.temperature * 1.8 + 32 + " F");
       $('#condition').text(data.weatherObservation.weatherCondition);
+      $('#clouds').text(data.weatherObservation.clouds);
     });
   });
 });
