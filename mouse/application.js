@@ -5,6 +5,7 @@ $(function(){
     $('body').append($('<div>').text(event.acceleration.x + 
                                ',' + event.acceleration.y + 
                                ',' + event.acceleration.z +
+                               ',' + new Date().UTC() + 
                                ',' + new Date()));
   }  
 });
