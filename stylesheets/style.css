@@ -13,7 +13,7 @@ body{
 #stripe_outer {
 	width: 100%;
 
-	padding: 20px;
+	padding: 20px 0;
 	margin: -150px 0 auto;
 	
 	position: absolute;
@@ -41,3 +41,7 @@ p {
 	font-size: 1.5em;
 }
 
+.drop-shadow {
+   position:relative;
+   width:90%;
+}
