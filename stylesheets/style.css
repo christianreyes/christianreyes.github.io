@@ -15,7 +15,6 @@ body{
 	width: 100%;
 	margin: -150px 0 auto;
 	
-	padding: 15px auto;
 	position: absolute;
 	top:50%;
 
@@ -28,6 +27,7 @@ body{
 	color: #444545;
 	width: 700px;
 	margin: 0 auto;
+	padding: 20px auto;
 }
 
 h1 {
