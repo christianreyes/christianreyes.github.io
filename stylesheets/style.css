@@ -7,13 +7,12 @@ body{
 	background-image: url('../images/brushed_alu.png');
 	background-repeat: repeat;
 	background-color: #efefef;
-	font-family: 'Source Sans Pro', sans-serif;
+	
+	font-family: 'Open Sans', sans-serif;
 }
 
 #stripe_outer {
 	width: 100%;
-
-	padding: 20px 0;
 	margin: -150px 0 auto;
 	
 	position: absolute;
@@ -32,12 +31,12 @@ body{
 
 h1 {
 	font-weight: 400;
-	font-size: 2.4em;
+	font-size: 2.25em;
 }
 
 p {
 	font-weight: 300;
-	font-size: 1.41em;
+	font-size: 1.25em;
 }
 
 #links a {
