@@ -21,7 +21,6 @@ body{
 
 	background-color: white;
 	background-color: rgba(255,255,255,.8);
-
 }
 
 #stripe_inner {
@@ -38,7 +37,11 @@ h1 {
 
 p {
 	font-weight: 300;
-	font-size: 1.5em;
+	font-size: 1.41em;
+}
+
+#links a {
+	text-decoration: none;
 }
 
 .drop-shadow {
