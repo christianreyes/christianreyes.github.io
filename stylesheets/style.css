@@ -42,6 +42,9 @@ p {
 
 #links a {
 	text-decoration: none;
+}
+
+#links a img {
 	outline: none;
 	border: none;
 }
