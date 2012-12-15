@@ -20,7 +20,7 @@ body{
 	top:50%;
 
 	background: rgb(255,255,255);
-	background: rgba(255,255,255,.8);
+	background: rgba(255,255,255,.85);
 }
 
 #stripe_inner {
