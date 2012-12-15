@@ -43,6 +43,7 @@ p {
 #links a {
 	text-decoration: none;
 	outline: none;
+	border: none;
 }
 
 .drop-shadow {
