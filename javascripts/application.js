@@ -5,7 +5,7 @@ $(function(){
 	}, 2000);
 
 	
-	if(jQuery.browser.mobile == false) {
+	//if(jQuery.browser.mobile == false) {
 		var key_to_xy = { 
 		                    /* left */  37: { x: -1, y:  0 }, 
 		                    /* up   */  38: { x:  0, y: -1 }, 
@@ -90,5 +90,5 @@ $(function(){
 				circle.animate(anim);	
 			}
 		}, DELAY / 10);	
-	}
+	//}
 })
