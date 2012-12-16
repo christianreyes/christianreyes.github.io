@@ -1,4 +1,10 @@
 $(function(){
+	
+	setTimeout(function(){
+		$('#stripe_outer').animate({top: 0, margin: 0}, 1000)
+	}, 2000);
+
+	
 	if(jQuery.browser.mobile == false) {
 		var key_to_xy = { 
 		                    /* left */  37: { x: -1, y:  0 }, 
@@ -17,7 +23,7 @@ $(function(){
 		var tail = [];
 
 		// Creates circle at x = 50, y = 40, with radius 10
-		var circle = paper.circle(-20, 40, 20);
+		var circle = paper.circle(-20, 400, 20);
 
 		circle.attr({
 		      "fill": "r(0.5, 0.5)#f00-#800",
