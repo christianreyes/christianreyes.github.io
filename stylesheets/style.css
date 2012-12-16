@@ -11,10 +11,6 @@ body{
 	font-family: 'Open Sans', sans-serif;
 }
 
-#wrapper {
-	position: relative;
-}
-
 #stripe_outer {
 	width: 100%;
 	margin: -150px 0 auto;

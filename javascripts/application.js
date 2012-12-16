@@ -1,7 +1,7 @@
 $(function(){
 	
 	setTimeout(function(){
-		$('#stripe_outer').animate({top: 0, margin: 0}, 1000)
+		$('#stripe_outer').animate({top: 0, margin: 0}, 1000);
 	}, 2000);
 
 	
