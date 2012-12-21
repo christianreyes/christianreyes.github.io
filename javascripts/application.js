@@ -1,8 +1,10 @@
 $(function(){
 	
+	/*
 	setTimeout(function(){
 		$('#stripe_outer').animate({top: 0, margin: 0}, 1000);
 	}, 2000);
+	*/
 
 	
 	//if(jQuery.browser.mobile == false) {
@@ -14,20 +16,21 @@ $(function(){
 		                };
 
 		var DELAY = 250;
-		var keyHeld = null;
+		var keyHeld = 39;
 		var animating = false;
 
 		var paper = Raphael("wrapper", "100%", "100%");
 
-		var MAX_LENGTH = 15;
+		var MAX_LENGTH = 11;
 		var tail = [];
 
 		// Creates circle at x = 50, y = 40, with radius 10
-		var circle = paper.circle(-20, 400, 20);
+		var circle = paper.circle(-50, $(window).height() / 2 - 100 + Math.random() * 100 , 20);
 
 		circle.attr({
-		      "fill": "r(0.5, 0.5)#f00-#800",
-		      "fill-opacity": 0.5,
+			  fill: "#f00",
+		      //"fill": "r(0.5, 0.5)#f00-#800",
+		      "fill-opacity": 0.4,
 			  stroke: 0
 		});
 
@@ -51,14 +54,85 @@ $(function(){
 
 			e.preventDefault();
 		});
+		
+		var random = false;
+		
+		setTimeout(function(){
+			random = true;
+		}, 5000);
+		
+		var dirs = [37,38,39,40];
+		
+		function newDirection(){
+			var delt = null;
+			
+			if(Math.random() < .65)
+				delt = 0;
+			else
+			{
+				if(Math.random() < .5)
+					delt = -1;
+				else
+					delt = 1;
+			}
+			
+			//var delt = Math.floor(-1 + Math.random() * 3);
+			var newDir = keyHeld - 37 + delt;
+			
+			if(newDir < 0)
+				newDir+= 4;
+			else if(newDir >= 4) {
+				newDir-= 4;
+			}
+			
+			var delt = key_to_xy[dirs[newDir]];
 
+			nx = circle.attr('cx') + 30 * delt.x;
+			ny = circle.attr('cy') + 30 * delt.y;
+			
+			if(nx > $(window).width()){
+				newDir = 0;
+			}				
+			else if(nx < 0){
+				newDir = 2;
+			}
+			else if(ny > $(window).height() ){
+				newDir = 1;
+			}
+			else if(ny < 0){
+				newDir = 3;
+			}
+						
+			return newDir;
+		}
+		
+		var randKey = null;
+		
+		setTimeout(function(){
+			setInterval(function(){
+				if(keyHeld == null)
+					keyHeld = 39;
+					
+				keyHeld = dirs[newDirection()];
+			}, 1000);	
+		}, 1000);
 
-		setInterval(function(){
+		setInterval(function(){				
 			if(keyHeld !== null && !animating ) {
 				var xy_diffs = key_to_xy[ keyHeld ];
 
 				//circle.transform("...t" + xy_diffs.x  + "," + xy_diffs.y);
 				animating = true;
+
+				
+				var anim = Raphael.animation({
+												cx: circle.attr('cx') + xy_diffs.x * 50,
+												cy: circle.attr('cy') + xy_diffs.y * 50
+											  }, 
+											  DELAY,
+											  function(){ 
+												animating = false;
+											  });
 
 				var temp = paper.circle(circle.attr('cx'), circle.attr('cy'), 15);
 
@@ -66,29 +140,31 @@ $(function(){
 					tail.shift();
 
 				for(var i=0;i<tail.length;i++){
-					tail[i].attr("r", 15 * ( i / tail.length ));
-					tail[i].attr("fill-opacity", .4 * ( i / tail.length ));
+					
+					var shrink = Raphael.animation({ 
+										r: 15 * ( i / tail.length ),
+										"fill-opacity": .4 * ( i / tail.length )
+									  },
+									  DELAY 
+									  )
+									
+					tail[i].animateWith(circle, anim, shrink);
+					
+					//tail[i].attr("r", 15 * ( i / tail.length ));
+					//tail[i].attr("fill-opacity", .4 * ( i / tail.length ));
 				}
 
 				tail.push(temp);
 
 				temp.attr({
-					"fill": "r(0.5, 0.5)#f00-#800",
+					fill: "#f77",
+					//"fill": "r(0.5, 0.5)#f00-#800",
 				    "fill-opacity": 0.4,
 					stroke: 0
 				});
 
-				var anim = Raphael.animation({
-												cx: circle.attr('cx') + xy_diffs.x * 50,
-												cy: circle.attr('cy') + xy_diffs.y * 50
-											  }, 
-											  DELAY / 2,
-											  function(){ 
-												animating = false;
-											  });
-
 				circle.animate(anim);	
 			}
-		}, DELAY / 10);	
+		}, 10);	
 	//}
 })
