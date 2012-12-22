@@ -6,6 +6,7 @@ $(function(){
 	}, 2000);
 	*/
 
+	$('#wrapper').height($(window).height())l
 	
 	//if(jQuery.browser.mobile == false) {
 		var key_to_xy = { 
@@ -16,7 +17,7 @@ $(function(){
 		                };
 
 		var DELAY = 250;
-		var keyHeld = 39;
+		var keyHeld = null;
 		var animating = false;
 
 		var paper = Raphael("wrapper", "100%", "100%");
@@ -25,10 +26,24 @@ $(function(){
 		var tail = [];
 
 		// Creates circle at x = 50, y = 40, with radius 10
-		var circle = paper.circle(-50, $(window).height() / 2 - 100 + Math.random() * 100 , 20);
+		var circle = null;
+		
+		var upDown = Math.random() < .5 ? -1 : 1;
+		
+		if( Math.random() < .5)
+		{
+			circle = paper.circle(-50, $(window).height() / 2 + upDown * ( 150 + Math.random() * 100 ) , 20);
+			keyHeld = 39;
+		}
+		else
+		{
+			circle = paper.circle($(window).width() + 50, $(window).height() / 2 + upDown * ( 150 + Math.random() * 100 )  , 20);
+			keyHeld = 37;
+		}
+			
 
 		circle.attr({
-			  fill: "#f00",
+			  fill: Math.random() < .33 ? "#f00" : Math.random() < .5 ? "#00f" : "#0f0" ,
 		      //"fill": "r(0.5, 0.5)#f00-#800",
 		      "fill-opacity": 0.4,
 			  stroke: 0
@@ -84,24 +99,6 @@ $(function(){
 			else if(newDir >= 4) {
 				newDir-= 4;
 			}
-			
-			var delt = key_to_xy[dirs[newDir]];
-
-			nx = circle.attr('cx') + 30 * delt.x;
-			ny = circle.attr('cy') + 30 * delt.y;
-			
-			if(nx > $(window).width()){
-				newDir = 0;
-			}				
-			else if(nx < 0){
-				newDir = 2;
-			}
-			else if(ny > $(window).height() ){
-				newDir = 1;
-			}
-			else if(ny < 0){
-				newDir = 3;
-			}
 						
 			return newDir;
 		}
@@ -123,21 +120,57 @@ $(function(){
 
 				//circle.transform("...t" + xy_diffs.x  + "," + xy_diffs.y);
 				animating = true;
-
+				
+				var nx = circle.attr('cx') + xy_diffs.x * 50;
+				var ny = circle.attr('cy') + xy_diffs.y * 50;
 				
 				var anim = Raphael.animation({
-												cx: circle.attr('cx') + xy_diffs.x * 50,
-												cy: circle.attr('cy') + xy_diffs.y * 50
+												cx: nx,
+												cy: ny
 											  }, 
 											  DELAY,
 											  function(){ 
 												animating = false;
-											  });
+												
+												if(reverse)
+													circle.attr({
+														cx: nx,
+														cy: ny
+													});
+											  });	
+											
+				circle.animate(anim);
+				
+				var ww = $(window).width();
+				var wh = $(window).height();
+				
+				var reverse = false;
+				if( nx > ww){
+					nx = -50;
+					reverse = true;
+				}
+				else if (nx < 0){
+					nx = ww + 50;
+					reverse = true;
+				}
+					
+				if( ny > wh ){
+					ny = -50;
+					reverse = true;
+				}
+				else if( ny < 0){
+					ny = wh + 50;
+					reverse = true;	
+				}
 
 				var temp = paper.circle(circle.attr('cx'), circle.attr('cy'), 15);
 
 				if(tail.length == MAX_LENGTH)
-					tail.shift();
+				{
+					tail.shift().remove();
+					
+				}
+					
 
 				for(var i=0;i<tail.length;i++){
 					
@@ -148,7 +181,7 @@ $(function(){
 									  DELAY 
 									  )
 									
-					tail[i].animateWith(circle, anim, shrink);
+					tail[i].animate(shrink);
 					
 					//tail[i].attr("r", 15 * ( i / tail.length ));
 					//tail[i].attr("fill-opacity", .4 * ( i / tail.length ));
@@ -157,13 +190,11 @@ $(function(){
 				tail.push(temp);
 
 				temp.attr({
-					fill: "#f77",
+					fill: circle.attr("fill").replace("0", "7").replace("0", "7"),
 					//"fill": "r(0.5, 0.5)#f00-#800",
 				    "fill-opacity": 0.4,
 					stroke: 0
 				});
-
-				circle.animate(anim);	
 			}
 		}, 10);	
 	//}
