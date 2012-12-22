@@ -6,7 +6,7 @@ $(function(){
 	}, 2000);
 	*/
 
-	$('#wrapper').height($(window).height())l
+	//$('#wrapper').height($(window).height())l
 	
 	//if(jQuery.browser.mobile == false) {
 		var key_to_xy = { 
