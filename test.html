@@ -1,9 +1,10 @@
 <html>
 <head>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script>
-  window.onload = function(){
-    document.write(window.outerHeight + "x" + window.outerWidth);
-  }
+  $(function(){
+    document.write($(window).height() + "x" + $(window).width());
+  })
 </script>
 </head>
 <body>
