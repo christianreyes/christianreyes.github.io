@@ -1,0 +1,162 @@
+body {
+    font-family: 'Oxygen', sans-serif;
+}
+
+.green {
+    color: #8fc41c;
+}
+
+.rewards div[data-role="content"]{
+    padding: 0;
+}
+
+#points h2 {
+    color: #008706;
+    margin-bottom: 0;
+}
+
+#points h3 {
+    margin-top: 5px;
+    color: #8A8A8A;
+}
+
+.rewards ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rewards li {
+    border-top: 2px solid rgb(226, 225, 225);
+    clear: both;
+    position: relative;
+    cursor: pointer;
+}
+
+.rewards li a {
+    color: rgb(129, 129, 129);
+    text-decoration: none;
+}
+
+.rewards li img.thumb {
+    width: 100px;
+    height: 90px;
+    float: left;
+    margin-right: 10px;
+    margin: 7px;
+}
+
+.rewards li h2 {
+    font-size: 15px;
+    margin-top: 27px;
+    margin-bottom: 0;
+    color: #424242;
+}
+
+.rewards li h3 {
+    color: #949494;
+    margin-top: 5px;
+}
+
+.rewards li span {
+    color: #008706;
+    font-weight: bold;
+}
+
+.rewards p.description {
+    margin: 10px;
+    line-height: 1.35em;
+    color: #949494;
+}
+
+#rewards li p {
+    margin-top: 5px;
+}
+
+.offerdetail {
+    line-height: 1.35em;
+}
+
+.offerdetail img {
+    width: 100%;
+}
+
+.offerdetail div[data-role="content"] {
+    padding: 0;
+    background-color: white;
+}
+
+.offerdetail > div[data-role="content"] > div.info {
+    margin: 10px 15px 70px 15px;
+}
+
+.headergroup {
+    text-align: center;
+}
+
+.headergroup h2 {
+    margin-bottom: 0;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.headergroup h3 {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.offerdetail hr {
+    border: 1px solid #dfdfdf;
+}
+
+.offerdetail h4 {
+    color: rgb(154,154,154);
+    margin: 15px 0;
+}
+
+.offerdetail table {
+    border-collapse:collapse;
+}
+
+.offerdetail table {
+    width: 100%;
+}
+
+.offerdetail tel {
+    color: rgb(98,170,227);
+}
+
+.offerdetail table td {
+    padding: 5px 0;
+}
+
+.offerdetail table tr td:nth-child(2){
+    text-align: right;
+    font-weight: bold;
+}
+
+.offerdetail button {
+    background-color: #8fc41c;
+    color: white;
+    border-radius: none;
+    width: 100%;
+    height: 3em;
+    font-size: 18px;
+    border: none;
+    position:fixed;
+    bottom:0;
+    cursor: pointer;
+}
+
+.imagediv {
+    height: 250px;
+    overflow: hidden;
+    margin: 0;
+}
+
+img.arrow-r {
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    top: 45px;
+}
