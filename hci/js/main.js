@@ -63,7 +63,7 @@ $(function(){
               if(direction == "left")
                 window.location = "tutorial2.html"
               if(direction == "right")
-                window.location = "login.html"
+                window.location = "index.html"
             },
             //Default is 75px, set to 0 for demo so any distance triggers swipe
              threshold:20
