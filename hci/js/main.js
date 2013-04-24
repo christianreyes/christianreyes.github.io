@@ -95,7 +95,7 @@ $(function(){
        threshold:20
     });
     
-    $('.offerdetail a.button').click(function(){
+    $('.offerdetail button').click(function(){
         /*
         var buttonPoints = parseInt($('span', this).text());
         points -= buttonPoints;
