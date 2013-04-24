@@ -1,17 +1,252 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
 body {
     font-family: 'Oxygen', sans-serif;
 }
 
+div[data-role="page"] {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    background-color: white;
+    z-index: 2;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
+
+div[data-role="header"] {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top:0;
+    height: 26px;
+    padding: 9px 0;
+    padding-top: 10px;
+    text-align: center;
+    
+    background-color: #e7e7e7;
+}
+
+div[data-role="header"] span{
+   border: 1px solid #c7c7c7;
+   height: 20px;
+   position: absolute;
+   color: #878787;
+   padding: 5px 10px;
+   top: 8px;
+   letter-spacing: 1px;
+   font-family: 'Open Sans', sans-serif;
+   background-color:  #e2e2e2;
+   border-radius: 4px;
+   line-height: 20px;
+}
+
+div[data-role="header"] span.right {
+    right: 8px;
+}
+
+div[data-role="header"] span.left {
+    left: 8px;
+}
+
+div[data-role="header"] img {
+    height: 18px;
+    position: absolute;
+    left: 8px;
+    top: 13px;
+}
+
+div[data-role="header"] h1 {
+    margin: 0;
+    font-size: 20px; 
+    color: #a8a8a8;
+}
+
+div[data-role="content"] {
+    display: table;
+    padding-top: 44px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 5;
+    background-color: white;
+}
+
+
+div[data-role="content"] .inner {
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+#login div[data-role="content"] {
+    margin-top: 0;
+}
+
+#login img {
+    width: 120px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+input.text {
+    width: 170px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+}
+
+button {
+    background-color: #8fc41c;
+    color: white;
+    border-radius: none;
+    margin-top: 10px;
+    width: 190px;
+    height: 2.5em;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+#phone .inner {
+    padding-top: 20px;
+    position: relative;
+}
+
+#phone h2 {
+    color: #333;
+}
+
+#phone h4 {
+    color: #333;
+}
+
+#phone p {
+    font-family: 'Open Sans', sans-serif;
+    margin: 18px;
+    color: #696969;
+    text-align: center;
+}
+
+#phone input.text {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#tutorial .tutorial1 img {
+    margin-top:30px;
+    width: 180px;
+}
+
+#tutorial h2 {
+    font-size: 18px;
+    color: #f3712b;
+    text-align: center;
+}
+
+#tutorial h2 span {
+    background-color: #f3712b;
+    width: 30px;
+    height: 30px;
+    font-weight: normal;
+    line-height: 30px;
+    display: inline-block;
+    color: white;
+    border-radius: 999px;
+    padding: 2px;
+    text-align: center;
+    margin-right: 5px;
+}
+
+#tutorial .inner {
+    display: block;
+    text-align: center;
+}
+
+#tutorial .tutorial1 table {
+    width: 260px;
+    padding: 20px 35px;
+    padding-left: 50px;
+    border-collapse:collapse;
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#tutorial .info {
+    background-color: #e7e7e7;
+    bottom: 0;
+    width: 100%;
+    top: 245px;
+    position: absolute;
+}
+
+#tutorial .markers {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin: 0 auto;
+    margin-left: -65px;
+}
+
+#tutorial .tutorial2 h2 {
+    margin-top: 40px;
+}
+
+#tutorial .tutorial3 h2 {
+    margin-top: 40px;
+}
+
+#tutorial .markers span{
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    display: inline-block;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #6c6c6c;
+}
+
+#tutorial .markers span.selected{
+    background-color: black;
+}
+
+#tutorial .tutorial2 img {
+    margin-top:40px;
+    width: 180px;
+}
+
+#tutorial .tutorial3 img {
+    margin-top:40px;
+    width: 180px;
+}
+
+
 .green {
     color: #8fc41c;
 }
+
+
 
 .rewards div[data-role="content"]{
     padding: 0;
 }
 
 #points h2 {
-    color: #008706;
+    color: #949494;
     margin-bottom: 0;
 }
 
@@ -20,9 +255,16 @@ body {
     color: #8A8A8A;
 }
 
-.rewards ul {
+#shop {
+    text-align: left;
+}
+
+ul.rewards {
     list-style: none;
     padding-left: 0;
+    margin-left:0;
+    text-align: left;
+    margin-bottom: 0;
 }
 
 .rewards li {
@@ -30,6 +272,11 @@ body {
     clear: both;
     position: relative;
     cursor: pointer;
+    height: 102px;
+}
+
+.rewards li:last-child{
+    border-bottom: 2px solid rgb(226, 225, 225);
 }
 
 .rewards li a {
@@ -38,11 +285,11 @@ body {
 }
 
 .rewards li img.thumb {
-    width: 100px;
+    width: 90px;
+    height: 90px;
     height: 90px;
     float: left;
-    margin-right: 10px;
-    margin: 7px;
+    margin: 6px;
 }
 
 .rewards li h2 {
@@ -58,7 +305,7 @@ body {
 }
 
 .rewards li span {
-    color: #008706;
+    color: #8fc41c;
     font-weight: bold;
 }
 
@@ -70,6 +317,7 @@ body {
 
 #rewards li p {
     margin-top: 5px;
+    font-size: 14px;
 }
 
 .offerdetail {
@@ -87,6 +335,10 @@ body {
 
 .offerdetail > div[data-role="content"] > div.info {
     margin: 10px 15px 70px 15px;
+}
+
+div.info {
+    text-align: left;
 }
 
 .headergroup {
@@ -145,6 +397,8 @@ body {
     border: none;
     position:fixed;
     bottom:0;
+    left: 0;
+    right: 0;
     cursor: pointer;
 }
 
@@ -152,6 +406,10 @@ body {
     height: 250px;
     overflow: hidden;
     margin: 0;
+}
+
+.myrewards li p{
+    font-size: 14px;
 }
 
 img.arrow-r {

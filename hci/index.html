@@ -3,276 +3,37 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
 		<title>PayTango Rewards</title>
-		<link rel="stylesheet" href="themes/PayTangoRewards.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile.structure-1.3.0.min.css" />
 		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="css/flexslider.css" type="text/css">
+
 		<link rel="stylesheet" href="css/style.css" />
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/jquery.touchSwipe.min.js"></script>
 		<script src="js/jquery.flexslider-min.js"></script>
 		<script src="js/main.js"></script>
 	</head>
 	<body>
-	    
-		<div class="rewards" data-role="page" data-theme="d" id="rewards">
-		    <!-- leftpanel1  -->
-            	<div data-role="panel" id="leftpanel1" data-position="left" data-display="reveal" data-theme="a" >
-                    <p><a href="#rewards">Explore</a></p>
-                    <p><a href="#myrewards">My Rewards</a></p>
-                    <p><a href="#settings">Settings</a></p>
-            	</div><!-- /leftpanel1 -->
-			<div data-role="header" data-position="fixed">
-			    <a href="#leftpanel1"  data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="leftpanel1">
-			        <span class="ui-btn-inner">
-			            <span class="ui-btn-text">Menu</span>
-			            <span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span>
-			        </span>
-			    </a>
-				<h1>explore</h1>
-			</div>
-			<div data-role="content">
-			    <div id="points" style="text-align: center;">
-			        <h2>210</h2>
-			        <h3>points earned</h3>
-			    </div>
-				<ul class="rewards" >
-				    <li>
-				        <a href="#offer1" data-transition="slide">
-				        <img class="thumb" src="images/rewards/coupon_images/coupon1.png">
-				        <div>
-				            <h2>50% off chicken salad</h2>
-				            <p><span>60</span> points &#149; Skibo Cafe</p>
-				        </div>
-				        <img class='arrow-r' src="images/arrow-r.png">
-				        </a>
-				    </li>
-				    <li>
-				        <a href="#">
-				        <img class="thumb" src="images/rewards/coupon_images/coupon2.png">
-				        <div>
-				            <h2>Free Grilled Cheese</h2>
-				            <p><span>50</span> points &#149; The Underground</p>
-				        </div>
-				        <img class='arrow-r' src="images/arrow-r.png">
-				        </a>
-				    </li>
-				    <li>
-				        <a href="#">
-				        <img class="thumb" src="images/rewards/coupon_images/coupon3.png">
-                        <div>
-				            <h2>Free Smoothie</h2>
-				            <p><span>20</span> points &#149; Skibo Cafe</p>
-				        </div>
-				        <img class='arrow-r' src="images/arrow-r.png">
-				        </a>
-				    </li>
-				    <li>
-				        <a href="#">
-				        <img class="thumb" src="images/rewards/coupon_images/coupon4.png">
-				        <div>
-				            <h2>Free Pancakes</h2>
-				            <p><span>60</span> points &#149; Skibo Cafe</p>
-				        </div>
-				        <img class='arrow-r' src="images/arrow-r.png">
-				        </a>
-				    </li>
-				    <li>
-				        <a href="#">
-				        <img class="thumb" src="images/rewards/coupon_images/coupon5.png">
-				        <div class="points">
-				            <h2>Shrimp Sandwich</h2>
-				            <p>The Exchange - 10 points</p>
-				        </div>
-				        <img class='arrow-r' src="images/arrow-r.png">
-				        </a>
-				    </li>
-				</ul>
-			</div>
-			
-		</div>
-		<div class="rewards" data-role="page" data-theme="d" id="myrewards">
-		    <!-- leftpanel1  -->
-            	<div data-role="panel" id="leftpanel1" data-position="left" data-display="reveal" data-theme="a" >
-                    <p><a href="#rewards">Explore</a></p>
-                    <p><a href="#myrewards">My Rewards</a></p>
-                    <p><a href="#settings">Settings</a></p>
-            	</div><!-- /leftpanel1 -->
-			<div data-role="header" data-position="fixed">
-			    <a href="#leftpanel1"  data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="leftpanel1">
-			        <span class="ui-btn-inner">
-			            <span class="ui-btn-text">Menu</span>
-			            <span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span>
-			        </span>
-			    </a>
-				<h1>my rewards</h1>
-			</div>
-			<div data-role="content">
-			    <p class="description">
-			        Use PayTango at the voucher locations to redeem your rewards. You will automatically be reminded when you use the PayTango terminal.
-			    </p>
-				<ul class="rewards" >
-				    <li>
-				        <a href="#offer1" data-transition="slide">
-				        <img class="thumb" src="images/rewards/coupon_images/coupon1.png">
-				        <div>
-				            <h2>50% off chicken salad</h2>
-				            <p><span>Exp 5/5/13</span> &#149; Skibo Cafe</p>
-				        </div>
-				        <img class='arrow-r' src="images/arrow-r.png">
-				        </a>
-				    </li>
-				    <li>
-				        <a href="#">
-				        <img class="thumb" src="images/rewards/coupon_images/coupon2.png">
-				        <div>
-				            <h2>Free Grilled Cheese</h2>
-				            <p><span>Exp 5/15/13</span> &#149; The Underground</p>
-				        </div>
-				        <img class='arrow-r' src="images/arrow-r.png">
-				        </a>
-				    </li>
-				</ul>
-			</div>
-			
-		</div>
-		<div data-role="page" data-theme="a" id="settings">
-		    <!-- leftpanel1  -->
-            	<div data-role="panel" id="leftpanel1" data-position="left" data-display="reveal" data-theme="a" >
-                        <p><a href="#rewards">Explore</a></p>
-                        <p><a href="#myrewards">My Rewards</a></p>
-                        <p><a href="#settings">Settings</a></p>
-            	</div><!-- /leftpanel1 -->
-			<div data-role="header" data-position="fixed">
-			    <a href="#leftpanel1" data-icon="bars" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Menu">
-			        <span class="ui-btn-inner">
-			            <span class="ui-btn-text">Menu</span>
-			            <span class="ui-icon ui-icon-bars ui-icon-shadow">&nbsp;</span>
-			        </span>
-			    </a>
-				<h1>Settings</h1>
-			</div>
-			<div data-role="content" data-theme="a">
-	            <a href="#" data-role="button" data-icon="delete" data-iconpos="right">Rewards Notifications</a>
-			    <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">
-        			<li data-role="list-divider">Manage Account</li>
-        			<li><a href="#">Manage Cards</a></li>
-        			<li><a href="#">Legal &amp; Privacy</a></li>
-        			<li><a href="#">App Version</a></li>
-        			<li><a href="#">Tell friends about PayTango</a></li>
-        		</ul>
-        		
-        		<a href="#login" data-role="button">Logout</a>
-			</div>
-		</div>
-		<div data-role="page" data-add-back-btn="true"  data-theme="d" id="offer1" class="offerdetail">
-			<div data-role="header" data-add-back-btn="true" data-position="fixed">
-			    <a href="#rewards" data-direction="reverse" data-transition="slide" data-icon="back" data-iconpos="notext" class="ui-btn-left ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-notext ui-btn-up-f" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="f" title="Back">
-			        <span class="ui-btn-inner">
-			            <span class="ui-btn-text">Button</span>
-			            <span class="ui-icon ui-icon-back ui-icon-shadow">&nbsp;</span>
-			        </span>
-			    </a>
-				<h1>Details</h1>
-			</div>
-			<div data-role="content" data-theme="d">
-			    <div class='imagediv'>
-	                <img src="images/rewards/coupon_images/coupon1.png">
-	            </div>
-	            <div class="info">
-	                <div class="headergroup">
-    	                <h2>50% off chicken salad</h2>
-    	                <h3>Skibo Cafe</h3>
-    	            </div>
-    	            
-    	            <hr>
-    	            
-    	            <p>
-    	                Enjoy half off a chicken salad from Skibo Cafe. Topped with grilled chicken, avocado, walmuts, mozarella and tomatoes.
-    	            </p>
-	            
-    	            <hr>
-	            
-    	            <h4>Offer Details</h4>
-    	            <table>
-    	                <tr>
-    	                    <td>Price with coupon</td>
-    	                    <td class="green">$3.99</td>
-    	                </tr>
-    	                <tr>
-    	                    <td>Original Price</td>
-    	                    <td>$7.99</td>
-    	                </tr>
-    	                <tr>
-    	                    <td>Expires</td>
-    	                    <td>May 5, 2013</td>
-    	                </tr>
-    	            </table>
-	            
-    	            <hr>
-	            
-    	            <h4>Location</h4>
-    	            <p>
-    	                Skibo Cafe<br>
-    	                University Center<br>
-    	                <tel>(412) 123-4567</tel>
-    	            </p>
-	            
-    	            <hr>
-    	            <h4>Restrictions</h4>
-    	            <p>
-    	                Limit 2 offers per person. Multiple offers can be used during one visit. Must be redeemed with the use of PayTango.
-    	            </p>
-	            
-
-	            </div>
-	            <a href="#myrewards"><button data-role="none">Redeem for 60 pts</button></a>
-			</div>
-		</div>
-		<div data-role="page" data-theme="a" id="login">
-        	<div data-role="header" data-position="fixed">
-				<h1>Login</h1>
-			</div>
-			<div data-role="content" data-theme="a" style="height: 100%; padding-top: 150px;position:absolute; width: 90%;">
-			    <form id="fhome" method="POST" action="mainpage">
-    			    <input type="text" autocorrect="off" autocapitalize="off" name="text-basic" id="txtandrewid" placeholder="andrewid" value="">
-    			    <input type="password" name="text-basic" id="txt-password" placeholder="password" value="">
-                    <input type="submit" value="Login" data-theme="e">
-    			</form>
-			</div>			
-	    </div>
-	     <div data-role="page" data-theme="a" id="phone">
+	        <div id="login" data-role="page" >
+    	        <!--
             	<div data-role="header" data-position="fixed">
-    				<h1>Signup</h1>
-    			</div>
-    			<div data-role="content" data-theme="a" style="height: 100%; padding-top: 150px;position:absolute; width: 90%;">
-    			    <form id="fhome" method="POST" action="mainpage">
-        			    <input type="tel" autocorrect="off" autocapitalize="off" name="text-basic" id="txtandrewid" placeholder="phone number" value="">
-                        <a href="#tutorial"><input type="submit" value="phone" data-theme="e"></a>
-        			</form>
-    			</div>			
-    	    </div>
-   	     <div data-role="page" data-theme="a" id="tutorial">
-               	<div data-role="header" data-position="fixed">
-       				<h1>Tutorial</h1>
-       			</div>
-       			<div data-role="content" data-theme="a">
-       			    <div class="flexslider" >
-                      <ul class="slides" >
-                        <li>
-                          <img src="images/tutorial/slide1.jpg" />
-                        </li>
-                        <li>
-                          <img src="images/tutorial/slide2.jpg" />
-                        </li>
-                        <li>
-                          <img src="images/tutorial/slide3.jpg" />
-                        </li>
-                      </ul>
-                    </div>
-       			</div>			
-       	    </div>
+            		<h1>login</h1>
+            	</div>
+            	-->
+            	<div data-role="content" data-theme="a" id="loginpage">
+            	    <div class="inner">
+            	        <img src="images/splash-screen-logo.png">
+
+                	    <form id="fhome" method="POST" action="index.html">
+                		    <input class="text" type="text" autocorrect="off" autocapitalize="off" name="text-basic" id="txtandrewid" placeholder="andrewid" value=""></br>
+                		    <input class="text" type="password" name="text-basic" id="txt-password" placeholder="password" value=""></br>
+                		    <button>Login</button>
+<!--                            <input type="submit" value="login" data-theme="e"> -->
+                		</form>
+            		</div>
+            	</div>			
+            </div>
 	</body>
 </html>
