@@ -19,13 +19,16 @@ $(function(){
             swipe:function(event, direction, distance, duration, fingerCount) {
               if(direction == "right")
                 window.location = "shop.html"
+              else
+                 return true;
             },
             //Default is 75px, set to 0 for demo so any distance triggers swipe
-             threshold:20
+             threshold:20,
+             allowPageScroll:"vertical"
           });
     
     $('.back').click(function(){
-        history.back();
+        window.location = "shop.html"
     });
     
     $('#login form').submit(function(e){
