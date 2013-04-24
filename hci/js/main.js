@@ -10,7 +10,23 @@ $(function(){
     
     $('.flexslider').flexslider();
     
-
+    $('ul.rewards li').click(function(){
+        location.href = "offer1.html"
+    })
+    
+    $('.offerdetail').swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount) {
+              if(direction == "right")
+                window.location = "shop.html"
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+             threshold:20
+          });
+    
+    $('.back').click(function(){
+        history.back();
+    });
     
     $('#login form').submit(function(e){
         e.preventDefault();
