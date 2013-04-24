@@ -311,6 +311,7 @@ ul.rewards {
 
 .rewards p.description {
     margin: 10px;
+    margin-top: 55px;
     line-height: 1.35em;
     color: #949494;
 }

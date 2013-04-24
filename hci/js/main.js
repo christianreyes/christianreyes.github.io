@@ -27,6 +27,14 @@ $(function(){
              allowPageScroll:"vertical"
           });
     
+    $('#shop .menu').click(function(){
+        window.location = "myrewards.html"
+    })
+    
+    $('#myrewards .menu').click(function(){
+        window.location = "shop.html"
+    })
+    
     $('.back').click(function(){
         window.location = "shop.html"
     });
@@ -88,15 +96,24 @@ $(function(){
     });
     
     $('.offerdetail a.button').click(function(){
+        /*
         var buttonPoints = parseInt($('span', this).text());
         points -= buttonPoints;
         
         $('#points h2').text(points);
-        setTimeout(function(){
-                    $('#first').fadeIn();
-        }, 1000)
+        
+        */
+        
+        window.location = "myrewards.html"
+        
+
+
 
     });
+    
+    setTimeout(function(){
+                $('#first').fadeIn();
+    }, 1000)
     
     /*
     $.get('login.html', function(data){
