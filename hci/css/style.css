@@ -96,6 +96,7 @@ div[data-role="content"] {
     left: 50%;
     margin-left: -60px;
     display: none;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #splash img.loader {
