@@ -2,6 +2,22 @@
 
 $(function(){
     
+    $('#splash img.logo').bind("load", function () { 
+        $(this).fadeIn(1000); 
+    });
+    
+    $('#splash img.loader').bind("load", function () { 
+        $(this).fadeIn(1000); 
+    });
+    
+    setTimeout(function(){
+        $('img.logo').animate({
+           'top':"10px" 
+        });
+        $('img.loader').fadeOut();
+        $("#fhome").fadeIn();
+    },5000);
+    
     localStorage.test = 5;
     
     //$('div[data-role="page"]:gt(0)').css('display', "none");

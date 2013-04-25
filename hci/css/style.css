@@ -21,6 +21,11 @@ div[data-role="page"] {
     transition: all .8s ease-in-out;
 }
 
+#fhome {
+    display: none;
+    margin-top: 150px;
+}
+
 div[data-role="header"] {
     position: fixed;
     width: 100%;
@@ -81,12 +86,35 @@ div[data-role="content"] {
     background-color: white;
 }
 
+#splash {
+    position: relative;
+}
+
+#splash img.logo {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    margin-left: -60px;
+    display: none;
+}
+
+#splash img.loader {
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    margin-left: -8px;
+    display: none;
+}
 
 div[data-role="content"] .inner {
     vertical-align: middle;
     text-align: center;
     position: relative;
     height: 100%;
+}
+
+#login {
+    overflow-y: hidden;
 }
 
 #login div[data-role="content"] {
@@ -102,7 +130,7 @@ div[data-role="content"] .inner {
 input.text {
     width: 170px;
     padding: 10px;
-    font-size: 14px;
+    font-size: 16px;
     border: 1px solid #eee;
     margin-bottom: 10px;
     -webkit-appearance: none;
@@ -196,7 +224,7 @@ button {
 
 #tutorial .markers {
     position: absolute;
-    bottom: 20px;
+    bottom: 10px;
     left: 50%;
     margin: 0 auto;
     margin-left: -65px;
@@ -215,7 +243,7 @@ button {
     height: 10px;
     line-height: 10px;
     display: inline-block;
-    margin: 15px;
+    margin: 10px;
     border-radius: 10px;
     background-color: #6c6c6c;
 }
