@@ -55,7 +55,7 @@ $(function(){
         window.location = "shop.html"
     });
     
-    $('#login form').submit(function(e){
+    $('#splash form').submit(function(e){
         e.preventDefault();
         if($('#txtandrewid').val() == 'test') { 
            //$.mobile.changePage('index.html#rewards');
