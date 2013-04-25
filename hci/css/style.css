@@ -164,18 +164,19 @@ button {
     color: #333;
 }
 
+/*
 #phone p {
     font-family: 'Open Sans', sans-serif;
     margin: 18px;
     color: #696969;
     text-align: center;
 }
+*/
 
 #phone input.text {
     margin-top: 10px;
     text-align: center;
 }
-
 
 #tutorial .tutorial1 img {
     margin-top:30px;
