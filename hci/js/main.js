@@ -2,12 +2,28 @@
 
 $(function(){
     
+    $('a.transition').click(function(e){
+       var dest = $(this).attr("href").slice(1);
+       $('div[data-role="content"]').html(tempData[dest])
+       e.preventDefault();
+    });
+    
     $('#splash img.logo').bind("load", function () { 
         $(this).fadeIn(1000); 
     });
     
     $('#splash img.loader').bind("load", function () { 
         $(this).fadeIn(1000); 
+    });
+    
+    var pages = ["phone", "tutorial1", "shop"];
+    
+    var tempData = {};
+    
+    $(pages).each(function(ind, obj){
+        $('<div class="temp"></div>').load(obj + '.html div[data-role="page"]', function(){
+            tempData[obj] = this;
+        });
     });
     
     setTimeout(function(){
@@ -53,6 +69,7 @@ $(function(){
         window.location = "shop.html"
     });
     
+    /*
     $('#splash form').submit(function(e){
         e.preventDefault();
         if($('#txtandrewid').val() == 'test') { 
@@ -64,6 +81,7 @@ $(function(){
         }
         return false;
     });
+    */
     
     $('#phone form').submit(function(e){
         e.preventDefault();
