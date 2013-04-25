@@ -96,7 +96,6 @@ div[data-role="content"] {
     left: 50%;
     margin-left: -60px;
     display: none;
-    font-family: 'Open Sans', sans-serif;
 }
 
 #splash img.loader {
@@ -175,7 +174,6 @@ button {
 */
 
 #phone p{
-    font-family: 'Open Sans', sans-serif;
     margin:18px;
     color: #696969;
 }
