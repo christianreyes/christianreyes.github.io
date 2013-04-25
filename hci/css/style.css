@@ -47,7 +47,7 @@ div[data-role="header"] span{
    padding: 5px 10px;
    top: 8px;
    letter-spacing: 1px;
-   font-family: 'Open Sans', sans-serif;
+   /*font-family: 'Open Sans', sans-serif;*/
    background-color:  #e2e2e2;
    border-radius: 4px;
    line-height: 20px;
