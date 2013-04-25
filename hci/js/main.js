@@ -24,8 +24,6 @@ $(function(){
     
     var points = parseInt($('#points h2').text());
     
-    $('.flexslider').flexslider();
-    
     $('ul.rewards li').click(function(){
         location.href = "offer1.html"
     })
