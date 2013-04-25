@@ -119,9 +119,6 @@ $(function(){
         */
         
         window.location = "myrewards.html"
-        
-
-
 
     });
     
