@@ -173,6 +173,11 @@ button {
 }
 */
 
+#phone p{
+    margin:18px;
+    color: #696969;
+}
+
 #phone input.text {
     margin-top: 10px;
     text-align: center;
