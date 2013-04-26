@@ -162,8 +162,12 @@ $(function(){
         $('a.redeem').click(function(){
             setTimeout(function(){
                         $('#first').fadeIn();
-            }, 1000)
+            }, 1000);
+            
+            $('#points h2 span').text(points - 50);
         })
+        
+        var points = parseInt($('#points h2 span').text());
     };
     
     var changePage = function(thisElement, page, event){
@@ -171,8 +175,10 @@ $(function(){
         var dest = $(thisElement).attr("data-target");
         if(!dest)
             dest = $(thisElement).attr("href");
-        $(thisElement).closest('div[data-role="page"]').hide();
-        $(dest).show();
+        if(dest){
+            $(thisElement).closest('div[data-role="page"]').hide();
+            $(dest).show();   
+        }
     };
     
     loadPages();
@@ -185,5 +191,5 @@ $(function(){
         $(this).fadeIn(1000); 
     });
     
-    var points = parseInt($('#points h2').text());
+    
 });
