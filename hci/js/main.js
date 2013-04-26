@@ -10,7 +10,8 @@ $(function(){
                         "tutorial2", 
                         "tutorial3", 
                         "shop",
-                        "offer1"
+                        "offer1",
+                        "myrewards"
                     ];
         
         $(pages).each(function(ind, obj){
@@ -130,19 +131,28 @@ $(function(){
         $('a.menu').click(function(e){
             var page = $(this).closest('div[data-role="page"]');
             var header = $(this).closest('div[data-role="header"]');
+            var menu = $('a.menu');
 
             e.preventDefault();
 
-                        if(page.hasClass("menucollapsed")){
-                            page.css("left", "100px");
-                            header.css("left", "100px");
-                            page.addClass("menuextended").removeClass('menucollapsed');
-                        } else {
-                            page.css("left", 0);
-                            header.css("left", 0);
-                            page.addClass("menucollapsed").removeClass('menuextended');
-                        }
+            if(page.hasClass("menucollapsed")){
+                page.css("left", "100px");
+                header.css("left", "100px");
+                menu.css("left", "100px");
+                page.addClass("menuextended").removeClass('menucollapsed');
+            } else {
+                page.css("left", 0);
+                header.css("left", 0);
+                menu.css("left", 0);
+                page.addClass("menucollapsed").removeClass('menuextended');
+            }
         });
+        
+        $('a.redeem').click(function(){
+            setTimeout(function(){
+                        $('#first').fadeIn();
+            }, 1000)
+        })
     };
     
     var changePage = function(thisElement, page, event){
@@ -165,36 +175,4 @@ $(function(){
     });
     
     var points = parseInt($('#points h2').text());
-    
-    
-    
-    $('.offerdetail').swipe( {
-            //Generic swipe handler for all directions
-            swipe:function(event, direction, distance, duration, fingerCount) {
-              if(direction == "right")
-                window.location = "shop.html"
-              else
-                 return true;
-            },
-            //Default is 75px, set to 0 for demo so any distance triggers swipe
-             threshold:20,
-             allowPageScroll:"vertical"
-          });
-
-    $('.offerdetail button').click(function(){
-        /*
-        var buttonPoints = parseInt($('span', this).text());
-        points -= buttonPoints;
-        
-        $('#points h2').text(points);
-        
-        */
-        
-        window.location = "myrewards.html"
-
-    });
-    
-    setTimeout(function(){
-                $('#first').fadeIn();
-    }, 1000)
 });

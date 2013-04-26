@@ -16,10 +16,11 @@
 		<script src="js/main.js"></script>
 	</head>
 	<body>
-        <div class="rewards" data-role="page" id="myrewards">
-        	<div data-role="header" data-position="fixed">
+        <div class="rewards menucollapsed" data-role="page" id="myrewards">
+            <div data-role="header" data-position="fixed" class="menucollapsed">
         	    <img class="menu" src="images/icons/menu-icon.png">
-        		<h1>my rewards</h1>
+        	    <a class="menu" href="#tutorial1"></a>
+        		<h1>shop</h1>
         		<span class="right">Filter</span>
         	</div>
         	<div data-role="content">
@@ -27,7 +28,7 @@
         	        Use PayTango at the voucher locations to redeem your rewards. You will automatically be reminded when you use the PayTango terminal.
         	    </p>
         		<ul class="rewards myrewards" >
-        		    <li id="first" style="display: none">
+        		    <li id="first" style="display: none;">
         		        <a href="#offer1" data-transition="slide">
         		        <img class="thumb" src="images/rewards/coupon_images/coupon1.png">
         		        <div>
