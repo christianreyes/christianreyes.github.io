@@ -47,9 +47,16 @@ $(function(){
         $('a.transition').click(function(e){
             e.preventDefault();
             var dest = $(this).attr("href");
-            $(this).closest('div[data-role="page"]').hide();
-            $(dest).show();
+            $(this).closest('div[data-role="page"]').removeClass("current").hide();
+            $(dest).addClass("current").show();
         });      
+        
+        $('#menu li').click(function(e){
+            e.preventDefault();
+            var dest = $(this).attr("data-target");
+            $(".current").closest('div[data-role="page"]').removeClass('current').hide();
+            $(dest).addClass('current').show();
+        });
         
         $(".tutorial1").swipe( {
             //Generic swipe handler for all directions
@@ -94,12 +101,12 @@ $(function(){
                     alert("Congrats! You have completed registration!")
                     var dest = "#shop"
                     $(this).closest('div[data-role="page"]').hide();
-                    $(dest).show();
+                    $(dest).addClass('current').show();
                 }
                 if(direction == "right") {
                     var dest = "#tutorial2"
-                    $(this).closest('div[data-role="page"]').hide();
-                    $(dest).show();
+                    $(this).closest('div[data-role="page"]').removeClass("current").hide();
+                    $(dest).addClass('current').show();
                 }
             },
             //Default is 75px, set to 0 for demo so any distance triggers swipe
