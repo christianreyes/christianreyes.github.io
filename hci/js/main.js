@@ -65,7 +65,7 @@ $(function(){
                 }
             },
             //Default is 75px, set to 0 for demo so any distance triggers swipe
-            threshold:20
+            threshold:60
         });
         
         $(".tutorial2").swipe( {
@@ -83,7 +83,7 @@ $(function(){
                 }
             },
             //Default is 75px, set to 0 for demo so any distance triggers swipe
-            threshold:20
+            threshold:60
         });
         
         $(".tutorial3").swipe( {
@@ -106,11 +106,35 @@ $(function(){
         });
         
         $('ul.rewards li').click(function(e){
-            e.preventDefault();
-            var dest = $(this).attr("data-target");
-            $(this).closest('div[data-role="page"]').hide();
-            $(dest).show();
-        })
+            changePage(this, $(this).attr("data-target"), e);
+        });
+        
+        $('a.back').click(function(e){
+            changePage(this, "shop", e);
+        });
+        
+        $(".offerdetail").swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount) {
+                if(direction == "right") {
+                    var dest = "#shop"
+                    $(this).closest('div[data-role="page"]').hide();
+                    $(dest).show();
+                }
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold:60,
+            allowPageScroll:"vertical"
+        });
+    };
+    
+    var changePage = function(thisElement, page, event){
+        event.preventDefault();
+        var dest = $(thisElement).attr("data-target");
+        if(!dest)
+            dest = $(thisElement).attr("href");
+        $(thisElement).closest('div[data-role="page"]').hide();
+        $(dest).show();
     };
     
     loadPages();
@@ -148,9 +172,7 @@ $(function(){
         window.location = "shop.html"
     })
     
-    $('.back').click(function(){
-        window.location = "shop.html"
-    });
+
     
     
     $('.offerdetail button').click(function(){
