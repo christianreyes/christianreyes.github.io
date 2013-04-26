@@ -56,6 +56,10 @@ $(function(){
             var dest = $(this).attr("data-target");
             $(".current").closest('div[data-role="page"]').removeClass('current').hide();
             $(dest).addClass('current').show();
+            if($('a.menu').css('left') == 0)
+                $('a.menu').css("left", "100px");
+            else
+                $('a.menu').css("left", 0);
         });
         
         $(".tutorial1").swipe( {

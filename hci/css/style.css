@@ -495,9 +495,6 @@ a.menu {
     left: 0;
     z-index: 40;
     width: 60px;
-    
-    transition: left .5s, 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
-    -webkit-transition: left .5s  500ms cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
 }
 
 #menu {
