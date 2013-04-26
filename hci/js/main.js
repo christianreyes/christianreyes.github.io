@@ -127,39 +127,23 @@ $(function(){
             allowPageScroll:"vertical"
         });
         
-        /*
-        $('.menu').click(function(e){
-            var page = $('div[data-role="page"]');
-            var header = $('div[data-role="header"]');
-            
-            if(page.hasClass("menuextended")){
-                page.css("left", 0);
-                header.css("left", 0);
-//                page.addClass("menucollapsed").removeClass('menuextended');
-            } else {
-                page.css("left", "100px");
-//                page.addClass("menuextended").removeClass('menucollapsed');
-            }
+        $('a.menu').click(function(e){
+            var page = $(this).closest('div[data-role="page"]');
+            var header = $(this).closest('div[data-role="header"]');
+
+            e.preventDefault();
+
+                        if(page.hasClass("menucollapsed")){
+                            page.css("left", "100px");
+                            header.css("left", "100px");
+                            page.addClass("menuextended").removeClass('menucollapsed');
+                        } else {
+                            page.css("left", 0);
+                            header.css("left", 0);
+                            page.addClass("menucollapsed").removeClass('menuextended');
+                        }
         });
-        */
     };
-    
-    $('a.menu').click(function(e){
-        var page = $(this).closest('div[data-role="page"]');
-        var header = $(this).closest('div[data-role="header"]');
-        
-        e.preventDefault();
-        
-                    if(page.hasClass("menucollapsed")){
-                        page.css("left", "100px");
-                        header.css("left", "100px");
-                        page.addClass("menuextended").removeClass('menucollapsed');
-                    } else {
-                        page.css("left", 0);
-                        header.css("left", 0);
-                        page.addClass("menucollapsed").removeClass('menuextended');
-                    }
-    });
     
     var changePage = function(thisElement, page, event){
         event.preventDefault();
