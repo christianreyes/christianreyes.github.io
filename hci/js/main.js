@@ -2,20 +2,106 @@
 
 $(function(){
     
-    $('a.transition').click(function(e){
-        e.preventDefault();
-        var dest = $(this).attr("href").slice(1);
-        $('div[data-role="page"]').html(tempData[dest]);
-        $('div[data-role="page"]').attr('id', dest);
+    var loadPages = function(){
+        var tasks = [];
+        var pages = ["phone", "tutorial1", "tutorial2", "tutorial3", "shop"];
         
-        $('div[data-role="content"]').find('a.transition').click(function(ee){
-            ee.preventDefault();
-            var dest2 = $(this).attr("href").slice(1);
-            $('div[data-role="page"]').html(tempData[dest2]);
-            $('div[data-role="page"]').attr('id', dest2);
-
+        $(pages).each(function(ind, obj){
+            var task = function(callback){
+                $('<div class="temp"></div>').load(obj + '.html div[data-role="page"]', function(){
+                    $(this).find('div[data-role="page"]').css('display', 'none');
+                    $('body').append($(this).html());
+                    callback(null, null);
+                });  
+            };
+            
+            tasks.push(task);
         });
-    });
+        
+        async.series(tasks, function(err, results){
+            console.log('pages loaded!');
+            setDomEvents();
+        });
+    };
+    
+    var setDomEvents = function(){
+        
+        $('img.logo').animate({
+           'top':"10px" 
+        });
+        
+        $('img.loader').fadeOut();
+        
+        setTimeout(function(){
+            $("#fhome").fadeIn();
+        }, 1000);
+        
+        $('a.transition').click(function(e){
+            e.preventDefault();
+            var dest = $(this).attr("href");
+            $(this).closest('div[data-role="page"]').hide();
+            $(dest).show();
+            //$('div[data-role="page"]').html(tempData[dest]);
+            //$('div[data-role="page"]').attr('id', dest);
+        });      
+        
+        $(".tutorial1").swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount) {
+                if(direction == "left") {
+                    var dest = "#tutorial2"
+                    $(this).closest('div[data-role="page"]').hide();
+                    $(dest).show();
+                }
+                if(direction == "right") {
+                    var dest = "#splash"
+                    $(this).closest('div[data-role="page"]').hide();
+                    $(dest).show();
+                }
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold:20
+        });
+        
+        $(".tutorial2").swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount) {
+                if(direction == "left") {
+                    var dest = "#tutorial3"
+                    $(this).closest('div[data-role="page"]').hide();
+                    $(dest).show();
+                }
+                if(direction == "right") {
+                    var dest = "#tutorial1"
+                    $(this).closest('div[data-role="page"]').hide();
+                    $(dest).show();
+                }
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold:20
+        });
+        
+        $(".tutorial3").swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount) {
+                if(direction == "left") {
+                    alert("Congrats! You have completed registration!")
+                    var dest = "#shop"
+                    $(this).closest('div[data-role="page"]').hide();
+                    $(dest).show();
+                }
+                if(direction == "right") {
+                    var dest = "#tutorial2"
+                    $(this).closest('div[data-role="page"]').hide();
+                    $(dest).show();
+                }
+            },
+            //Default is 75px, set to 0 for demo so any distance triggers swipe
+            threshold:20
+        });
+    };
+    
+    loadPages();
     
     $('#splash img.logo').bind("load", function () { 
         $(this).fadeIn(1000); 
@@ -24,28 +110,6 @@ $(function(){
     $('#splash img.loader').bind("load", function () { 
         $(this).fadeIn(1000); 
     });
-    
-    var pages = ["phone", "tutorial1", "tutorial2", "tutorial3", "shop"];
-    
-    var tempData = {};
-    
-    $(pages).each(function(ind, obj){
-        $('<div class="temp"></div>').load(obj + '.html div[data-role="page"]', function(){
-            tempData[obj] = $(this).html();
-        });
-    });
-    
-    setTimeout(function(){
-        $('img.logo').animate({
-           'top':"10px" 
-        });
-        $('img.loader').fadeOut();
-        $("#fhome").fadeIn();
-    },3500);
-    
-    localStorage.test = 5;
-    
-    //$('div[data-role="page"]:gt(0)').css('display', "none");
     
     var points = parseInt($('#points h2').text());
     
