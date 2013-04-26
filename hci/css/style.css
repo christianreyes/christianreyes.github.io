@@ -95,18 +95,19 @@ div[data-role="content"] {
 
     padding-top: 44px;
     width: 100%;
-    /*
+    
     position: absolute;
+    
+    /*
     display: table;        
-
+    height: 100%;
     */
     top: 0;
     bottom: 0;
-    height: 100%;
+    
     z-index: 5;
     background-color: white;
     
-    position: absolute;
     left: 0;
     right: 0;
     
