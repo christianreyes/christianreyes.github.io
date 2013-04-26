@@ -3,9 +3,18 @@
 $(function(){
     
     $('a.transition').click(function(e){
-       var dest = $(this).attr("href").slice(1);
-       $('div[data-role="content"]').html(tempData[dest])
-       e.preventDefault();
+        e.preventDefault();
+        var dest = $(this).attr("href").slice(1);
+        $('div[data-role="page"]').html(tempData[dest]);
+        $('div[data-role="page"]').attr('id', dest);
+        
+        $('div[data-role="content"]').find('a.transition').click(function(ee){
+            ee.preventDefault();
+            var dest2 = $(this).attr("href").slice(1);
+            $('div[data-role="page"]').html(tempData[dest2]);
+            $('div[data-role="page"]').attr('id', dest2);
+
+        });
     });
     
     $('#splash img.logo').bind("load", function () { 
@@ -16,13 +25,13 @@ $(function(){
         $(this).fadeIn(1000); 
     });
     
-    var pages = ["phone", "tutorial1", "shop"];
+    var pages = ["phone", "tutorial1", "tutorial2", "tutorial3", "shop"];
     
     var tempData = {};
     
     $(pages).each(function(ind, obj){
         $('<div class="temp"></div>').load(obj + '.html div[data-role="page"]', function(){
-            tempData[obj] = this;
+            tempData[obj] = $(this).html();
         });
     });
     
@@ -32,7 +41,7 @@ $(function(){
         });
         $('img.loader').fadeOut();
         $("#fhome").fadeIn();
-    },5000);
+    },3500);
     
     localStorage.test = 5;
     
@@ -83,11 +92,13 @@ $(function(){
     });
     */
     
+    /*
     $('#phone form').submit(function(e){
         e.preventDefault();
         window.location = "tutorial1.html"
         return false;
     });
+    */
     
     $(".tutorial1").swipe( {
             //Generic swipe handler for all directions

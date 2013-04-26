@@ -10,6 +10,8 @@ body {
 }
 
 div[data-role="page"] {
+    top: 0;
+    left: 0;
     position: relative;
     text-align: center;
     height: 100%;
@@ -183,18 +185,18 @@ button {
     text-align: center;
 }
 
-#tutorial .tutorial1 img {
+.tutorial .tutorial1 img {
     margin-top:30px;
     width: 180px;
 }
 
-#tutorial h2 {
+.tutorial h2 {
     font-size: 18px;
     color: #f3712b;
     text-align: center;
 }
 
-#tutorial h2 span {
+.tutorial h2 span {
     background-color: #f3712b;
     width: 30px;
     height: 30px;
@@ -208,12 +210,12 @@ button {
     margin-right: 5px;
 }
 
-#tutorial .inner {
+.tutorial .inner {
     display: block;
     text-align: center;
 }
 
-#tutorial .tutorial1 table {
+.tutorial .tutorial1 table {
     width: 260px;
     padding: 20px 35px;
     padding-left: 50px;
@@ -223,7 +225,7 @@ button {
     margin-bottom: 10px;
 }
 
-#tutorial .info {
+.tutorial .info {
     background-color: #e7e7e7;
     bottom: 0;
     width: 100%;
@@ -231,7 +233,7 @@ button {
     position: absolute;
 }
 
-#tutorial .markers {
+.tutorial .markers {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -239,15 +241,15 @@ button {
     margin-left: -50px;
 }
 
-#tutorial .tutorial2 h2 {
+.tutorial .tutorial2 h2 {
     margin-top: 40px;
 }
 
-#tutorial .tutorial3 h2 {
+.tutorial .tutorial3 h2 {
     margin-top: 40px;
 }
 
-#tutorial .markers span{
+.tutorial .markers span{
     width: 10px;
     height: 10px;
     line-height: 10px;
@@ -257,16 +259,16 @@ button {
     background-color: #6c6c6c;
 }
 
-#tutorial .markers span.selected{
+.tutorial .markers span.selected{
     background-color: black;
 }
 
-#tutorial .tutorial2 img {
+.tutorial .tutorial2 img {
     margin-top:40px;
     width: 180px;
 }
 
-#tutorial .tutorial3 img {
+.tutorial .tutorial3 img {
     margin-top:40px;
     width: 180px;
 }
