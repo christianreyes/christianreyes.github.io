@@ -509,6 +509,7 @@ a.menu {
 #menu ul {
     padding-left: 0;
     list-style: none;
+    top: 100px;
 }
 
 #menu li {
